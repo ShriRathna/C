@@ -1,0 +1,17 @@
+#include<stdio.h>
+void main()
+{
+   int n,i=1,d=0,dec;
+   printf("Enter the num:");
+   scanf("%d",&n);
+   printf("The octal number is %o \n",n);
+   printf("The hexadecimal num is %x \n",n);
+   while (n>0)
+   {
+      dec=n%2;
+      d=d+(dec*i);
+      i=i*10;
+      n=n/2;
+   }
+   printf("The binary number is %d \n",d);
+}
