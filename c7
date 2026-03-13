@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+  float phy,che,mat,cs,percent;
+  printf("Enter the mark for phy che mat cs:");
+  scanf("%f %f %f %f",&phy,&che,&mat,&cs);
+  percent=(phy+che+mat+cs)/4;
+  printf("the percentage is %f",percent);
+  if (percent>79)
+     printf("\nGOOD");
+  else if ((percent>59)&&(percent<80))
+     printf("\nAVERAGER");
+  else if ((percent>39)&&(percent<60))
+     printf("\nFAIR");
+  return 0;
+}
