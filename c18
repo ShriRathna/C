@@ -1,0 +1,75 @@
+#include<stdio.h>
+int main()
+{
+   char x[50],a,d;
+   int o,b,i,count=0,len=0,j;
+   printf("Enter the string:");
+   scanf("%s",&x);
+   printf("1.Character search\n2.Character at given position\n3.Num of occurence\n4.Palindrome\n5.Exit");
+   printf("\nEnter your choice:");
+   scanf("%d",&o);
+   switch(o)
+   {
+      case 1:
+      printf("Enter the letter to be searched:");
+      scanf(" %c",&a);
+      for(i=0;x[i]!='\0';i++)
+      {
+         if(x[i]==a)
+         {
+            printf("The position of %c is %d\n",a,i);
+         }
+      }
+      break;
+      case 2:
+         printf("enter the position:");
+         scanf("%d",&b);
+         printf("%c is in the given position %d",x[b-1],b);
+         break;
+
+      case 3:
+         printf("Enter the letter to be searched:");
+         scanf(" %c",&d);
+         for(i=0;x[i]!='\0';i++)
+         {
+            if(x[i]==d)
+            {
+               count++;
+            }
+         }
+         printf("occurence=%d",count);
+         break;
+      case 4:
+         for(i=0;x[i]!='\0';i++)
+         {
+            len++;
+         }
+         j=len-1;
+         for(i=0;i<len/2;i++)
+         {
+            if (x[i]=x[j])
+            {
+               j--;
+               continue;
+            }
+            else
+            {
+               break;
+            }
+         }
+         if(i==len/2)
+         {
+            printf("The given string is palindrome");
+         }
+         else
+         {
+            printf("The given string is not a palindrome");
+         }
+         break;
+      case 5:
+         printf("Exit");
+      default:
+         break;
+   }
+   return 0;
+}
