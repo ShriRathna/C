@@ -1,0 +1,16 @@
+#include<stdio.h>
+void main()
+{
+   int i,n,q,r,d=11;
+   printf("enter the value:");
+   scanf("%d",&n);
+   for (i=0;i<=n;i++)
+   {
+      q=n/d;
+      r=n-(q*d);
+   }
+   if(r==0)
+   {
+      printf("%d is divisible by 11",n);
+   }
+}
