@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+   float ac,pc,as,ps,aw,pw,cp,sp,profit;
+   printf("Enter the weight for apple:");
+   scanf("%f",&aw);
+   printf("Enter the weight for pomegranate:");
+   scanf("%f",&pw);
+   ac=140*aw;
+   pc=120*pw;
+   cp=ac+pc;
+   as=aw*150;
+   ps=pw*140;
+   sp=as+ps;
+   profit=sp-cp;
+   printf("The profit of varun is: %f",profit);
+   return 0;
+}
