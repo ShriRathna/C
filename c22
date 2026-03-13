@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+   int i,n;
+   printf("Enter number of students in class\n");
+   scanf("%d",&n);
+   int*rollnum =(int*)malloc(n*sizeof(int));
+   printf("Enter roll numbers\n");
+   for(i=0;i<n;i++)
+   {
+      printf("Students %d:",i+1);
+      scanf("%d",&rollnum[i]);
+   }
+   printf("\n The roll number for the advisor handling odd numbers\n");
+   for(i=0;i<n;i++)
+   {
+      if(rollnum[i]%2!=0)
+      {
+         printf("%d\n",rollnum[i]);
+      }
+   }
+   printf("\n The roll number for the advisor handling even roll numbers\n");
+   for(i=0;i<n;i++)
+   {
+      if(rollnum[i]%2==0)
+      {
+         printf("%d\n",rollnum[i]);
+      }
+   }
+}
