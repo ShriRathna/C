@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+   char x[100],temp;
+   int ch,len,f,l,i,count=0,count1=0,count2=0;
+   printf("Enter the string:\n");
+   scanf("%s",&x);
+   printf("1.Length of the string\n2.Reverse of the string\n3.Count the number of alphabets,numerals and other special characters\n4.Exit\n");
+   printf("Enter your choice:\n");
+   scanf("%d",&ch);
+   len=strlen(x);
+   switch(ch)
+   {
+      case 1:
+         printf("The length of the given string is :%d\n",len);
+         break;
+      case 2:
+         f=0;
+         l=len-1;
+         for (i=1;i<len/2;i++)
+         {
+            temp=x[f];
+            x[f]=x[l];
+            x[l]=temp;
+            f++;
+            l--;
+         }
+         printf("The reversed string is:%s\n",x);
+         break;
+      case 3:
+         for(i=0;i<len;i++)
+         {
+            if(isalpha(x[i]))
+            {
+              count++;
+            }
+            else if(isdigit(x[i]))
+            {
+              count1++;
+            }
+           else if (ispunct(x[i]))
+           {
+            count2++;
+           }
+         }
+         printf("Alphabets:%d\nNumerals:%d\nSpecial characters:%d\n",count,count1,count2);
+         break;
+      case 4:
+         printf("Exit");
+      default:
+         break;
+   }
+   return 0;
+}
