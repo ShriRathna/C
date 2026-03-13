@@ -1,0 +1,48 @@
+#include<stdio.h>
+struct BankAcc
+{
+   char type[100];
+   double bal;
+};
+void deposit(struct BankAcc*acc,double amount)
+{
+   acc->bal+=amount;
+   printf("%.2lf deposited successfully\n",amount);
+}
+void withdrawal(struct BankAcc*acc,double amount)
+{
+   if((acc->bal)>=amount)
+   {
+      acc->bal-=amount;
+      printf("%.2lf withdraw successfully\n", amount);
+   }
+   else
+      printf("Insufficient balance\n");
+}
+void transfer(struct BankAcc*sender,struct BankAcc*reciever,double amount)
+{
+   if(sender->bal>=amount)
+   {
+      sender->bal=amount;
+      reciever->bal+=amount;
+      printf("%.2lf transfer successful\n",amount);
+   }
+   else
+      printf("Insufficient Balance\n");
+}
+void querybal(struct BankAcc*acc)
+{
+   printf("Current Balance: %.2lf\n",acc->bal);
+}
+int main()
+{
+   struct BankAcc acc1,acc2;
+   acc1.bal=1000000.0;
+   acc2.bal=5000000.0;
+   deposit(&acc1,50000.0);
+   withdrawal(&acc1,200.0);
+   transfer(&acc1,&acc2,300000.0);
+   querybal(&acc1);
+   querybal(&acc2);
+   return 0;
+}
