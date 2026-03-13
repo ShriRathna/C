@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+   int accno;
+   double cl,ncl,cb;
+   printf("Enter the accno:");
+   scanf("%d",&accno);
+   printf("Enter the cerdit limit:");
+   scanf("%lf",&cl);
+   printf("Enter current balance:");
+   scanf("%lf",&cb);
+   ncl=cl/2;
+   printf("New credit limit is %lf",ncl);
+   if (cb>ncl)
+      printf("Current balance exceeds new credit limit");
+   else
+      printf("Doesn't exceeds");
+   return 0;
+}
