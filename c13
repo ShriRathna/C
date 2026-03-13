@@ -1,0 +1,18 @@
+#include<stdio.h>
+int pwr(int a, int b)
+{
+   if(b==0)
+      return 1;
+   else
+      return pwr(a,b-1)*a;
+}
+int main()
+{
+   long long int base,exponent;
+   printf("enter base:");
+   scanf("%d",&base);
+   printf("enter power:");
+   scanf("%d",&exponent);
+   printf("%d^%d = %d", base,exponent,pwr(base,exponent));
+   return 0;
+}
